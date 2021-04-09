@@ -7,6 +7,7 @@
 , pandas
 , scipy
 , wrapt
+, setupmeta
 }:
 
 buildPythonPackage rec {
@@ -26,6 +27,8 @@ buildPythonPackage rec {
     scipy
     wrapt
   ];
+
+  buildInputs = [ setupmeta ];
 
   doCheck = false;
 
