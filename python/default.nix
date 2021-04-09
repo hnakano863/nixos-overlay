@@ -7,6 +7,8 @@ final: prev:
 
       formulaic = final.callPackage ./formulaic { };
 
+      setupmeta = final.callPackage ./setupmeta { };
+
       interface-meta = final.callPackage ./interface-meta { };
 
       lifelines = final.callPackage ./lifelines { };
