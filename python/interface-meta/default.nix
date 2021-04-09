@@ -4,7 +4,7 @@
 }:
 
 buildPythonPackage rec {
-  pname = "interface-meta";
+  pname = "interface_meta";
   version = "1.2.3";
 
   src = fetchPypi {
