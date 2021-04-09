@@ -1,6 +1,7 @@
 { lib
 , buildPythonPackage
 , fetchPypi
+, setupmeta
 }:
 
 buildPythonPackage rec {
@@ -11,6 +12,8 @@ buildPythonPackage rec {
     inherit pname version;
     sha256 = "db79caf4f4cf337d55c6582f77f49c8366a9b9748579adf167ff9e50ba82985c";
   };
+
+  buildInputs = [ setupmeta ];
 
   doCheck = false;
 
