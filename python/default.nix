@@ -1,16 +1,16 @@
 final: prev:
-let
-  buildPythonPackage = prev.python38Packages.buildPythonPackage;
-  fetchPypi = prev.python38.fetchPypi;
-in
 {
+  python3 = prev.python3.override {
+    packageOverrides = final: prev: {
 
-  autograd-gamma = final.callPackage ./autograd-gamma { inherit buildPythonPackage fetchPypi; };
+      autograd-gamma = final.callPackage ./autograd-gamma { };
 
-  formulaic = final.callPackage ./formulaic { inherit buildPythonPackage fetchPypi; };
+      formulaic = final.callPackage ./formulaic { };
 
-  interface-meta = final.callPackage ./interface-meta { inherit buildPythonPackage fetchPypi; };
+      interface-meta = final.callPackage ./interface-meta { };
 
-  lifelines = final.callPackage ./lifelines { inherit buildPythonPackage fetchPypi; };
+      lifelines = final.callPackage ./lifelines { };
 
+    };
+  };
 }
