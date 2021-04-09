@@ -35,7 +35,10 @@
       dictdDBs = prev.dictdDBs // {
         eng2jpn = final.callPackage ./dictd-db/eng-jpn.nix {};
       };
-    } // (import ./julia final prev);
+    }
+    // (import ./julia final prev)
+    // (import ./python final prev);
+
   };
 
 }
