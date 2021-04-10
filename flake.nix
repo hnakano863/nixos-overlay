@@ -32,7 +32,13 @@
         }
       );
 
-      rWrapper = final.callPackages ./rlang { recommendedPackages = []; packages = []; };
+      rWrapper = final.callPackages ./rlang {
+        recommendedPackages = with final.rPackages; [
+          boot class cluster codetools foreign KernSmooth lattice MASS
+          Matrix mgcv nlme nnet rpart spatial survival
+        ];
+        packages = [];
+      };
 
       # dictd-db
       dictdDBs = prev.dictdDBs // {
