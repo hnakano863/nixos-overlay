@@ -33,7 +33,7 @@
         }
       );
 
-      rWrapper = nixpkgs.overrideAttrs (old: {
+      rWrapper = nixpkgs.rWrapper.overrideAttrs (old: {
         preferLocalBuild = true;
         allowSubstitute = false;
       });
