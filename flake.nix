@@ -1,7 +1,9 @@
 {
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+
   description = "my NixOS overlay";
 
-  outputs = { self }: {
+  outputs = { self, nixpkgs }: {
 
     overlay = final: prev: {
       # fonts
@@ -18,7 +20,7 @@
       # jupyter-command
       jupyterCmdFHS = import ./jupyterCmdFHS final prev;
 
-      vivaldi = (prev.vivaldi.override {
+      vivaldi = (nixpkgs.vivaldi.override {
         proprietaryCodecs = true;
         inherit (prev) vivaldi-ffmpeg-codecs;
       }).overrideAttrs (
@@ -30,6 +32,11 @@
           };
         }
       );
+
+      rWrapper = nixpkgs.overrideAttrs (old: {
+        preferLocalBuild = true;
+        allowSubstitute = false;
+      });
 
       # dictd-db
       dictdDBs = prev.dictdDBs // {
