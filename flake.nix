@@ -3,7 +3,9 @@
 
   description = "my NixOS overlay";
 
-  outputs = { self, nixpkgs }: {
+  outputs = { self, nixpkgs }:
+  let pkgs = import nixpkgs { system = "x86_64-linux"; }; in
+  {
 
     overlay = final: prev: {
       # fonts
@@ -20,7 +22,7 @@
       # jupyter-command
       jupyterCmdFHS = import ./jupyterCmdFHS final prev;
 
-      vivaldi = (nixpkgs.vivaldi.override {
+      vivaldi = (pkgs.vivaldi.override {
         proprietaryCodecs = true;
         inherit (prev) vivaldi-ffmpeg-codecs;
       }).overrideAttrs (
@@ -33,7 +35,7 @@
         }
       );
 
-      rWrapper = nixpkgs.rWrapper.overrideAttrs (old: {
+      rWrapper = pkgs.rWrapper.overrideAttrs (old: {
         preferLocalBuild = true;
         allowSubstitute = false;
       });
