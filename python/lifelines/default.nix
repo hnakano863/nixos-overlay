@@ -27,6 +27,7 @@ buildPythonPackage rec {
     autograd
     autograd-gamma
     formulaic
+    setuptools
   ];
 
   doCheck = false;
