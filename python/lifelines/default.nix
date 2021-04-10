@@ -8,6 +8,7 @@
 , autograd
 , autograd-gamma
 , formulaic
+, setuptools
 }:
 
 buildPythonPackage rec {
