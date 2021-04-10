@@ -32,7 +32,7 @@
         }
       );
 
-      rWrapper = final.callPackages ./rlang { };
+      rWrapper = final.callPackages ./rlang { recommendedPackages = []; packages = []; };
 
       # dictd-db
       dictdDBs = prev.dictdDBs // {
