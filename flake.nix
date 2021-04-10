@@ -32,7 +32,7 @@
         }
       );
 
-      rWrapper = final.callPackages ./rlang {
+      rWrapper = final.callPackage ./rlang {
         recommendedPackages = with final.rPackages; [
           boot class cluster codetools foreign KernSmooth lattice MASS
           Matrix mgcv nlme nnet rpart spatial survival
