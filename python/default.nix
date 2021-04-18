@@ -13,6 +13,8 @@ final: prev:
 
       lifelines = final.callPackage ./lifelines { };
 
+      pmdarima = final.callPackage ./pmdarima { };
+
     };
   };
 }
