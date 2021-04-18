@@ -24,10 +24,10 @@
         inherit (prev) vivaldi-ffmpeg-codecs;
       }).overrideAttrs (
         old: rec {
-          version = "3.6.2165.40-1";
+          version = "3.7.2218.55-1";
           src = builtins.fetchurl {
             url = "https://downloads.vivaldi.com/stable/vivaldi-stable_${version}_amd64.deb";
-            sha256 = "12l6xdlgnfv5apv92jlyz324crmm8r3di421ql424bj53j6bsq3y";
+            sha256 = "11pik7a9nsfgw5xpjqaa7z25v5iz9ckg0ax84r6iyccrbifgc3hg";
           };
         }
       );
