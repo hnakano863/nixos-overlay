@@ -20,11 +20,20 @@ final: prev: {
     sha256 = "0bb8fr692dqrf718p644y5swd3z8ivh4ysdaw7q0cir10cc16nym";
   };
 
-  julia-bin = final.callPackage ./template.nix {
+  julia-1_6_0 = final.callPackage ./template.nix {
     major = "1";
     minor = "6";
     patch = "0";
     sha256 = "1bc0hgb6h37i64dqg28h43brlpsclbwn2qpjy4fyiz2182z3zcfs";
   };
+
+  julia-1_6_1 = final.callPackage ./template.nix {
+    major = "1";
+    minor = "6";
+    patch = "1";
+    sha256 = "0xajwhc2lv9l8n7spmsp99a2z1ff426jv5jr0419ls34q9di8cfw";
+  };
+
+  julia-bin = final.julia-1_6_1;
 
 }
