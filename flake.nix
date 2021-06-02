@@ -22,15 +22,7 @@
       vivaldi = (prev.vivaldi.override {
         proprietaryCodecs = true;
         inherit (prev) vivaldi-ffmpeg-codecs;
-      }).overrideAttrs (
-        old: rec {
-          version = "3.7.2218.55-1";
-          src = builtins.fetchurl {
-            url = "https://downloads.vivaldi.com/stable/vivaldi-stable_${version}_amd64.deb";
-            sha256 = "11pik7a9nsfgw5xpjqaa7z25v5iz9ckg0ax84r6iyccrbifgc3hg";
-          };
-        }
-      );
+      });
 
       rWrapper = final.callPackage ./rlang {
         recommendedPackages = with final.rPackages; [
