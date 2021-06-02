@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ stdenv, lib, fetchurl }:
 stdenv.mkDerivation rec {
   name = "dictd-db-eng-jpn";
   src = fetchurl {
@@ -19,6 +19,6 @@ stdenv.mkDerivation rec {
 
   meta = {
     description = "dictd-db dictionary for dictd";
-    platforms = stdenv.lib.platforms.linux;
+    platforms = lib.platforms.linux;
   };
 }
