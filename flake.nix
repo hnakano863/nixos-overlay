@@ -17,8 +17,6 @@
       };
 
       # jupyter-command
-      jupyterCmdFHS = import ./jupyterCmdFHS final prev;
-
       jupyterCommand = import ./jupyter-command { pkgs = prev; };
 
       vivaldi = (prev.vivaldi.override {
