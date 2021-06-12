@@ -28,7 +28,9 @@ let
     });
   };
 
-  jupyterApp = (python3.override { inherit packageOverrides; }).withPackages (ps: [ ps.jupyter ]);
+  jupyterApp = let
+    myPython = (python3.override { inherit packageOverrides; });
+  in myPython.withPackages (ps: with ps; [ jupyter jupyterlab ]);
 
 in stdenvNoCC.mkDerivation {
   name = "jupyter-command";
