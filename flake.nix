@@ -36,6 +36,9 @@
       dictdDBs = prev.dictdDBs // {
         eng2jpn = final.callPackage ./dictd-db/eng-jpn.nix {};
       };
+
+      # nix-direnv flake integration
+      nix-direnv = prev.nix-direnv.override { enableFlakes = true; };
     }
     // (import ./julia final prev)
     // (import ./python final prev);
