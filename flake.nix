@@ -39,6 +39,9 @@
 
       # nix-direnv flake integration
       nix-direnv = prev.nix-direnv.override { enableFlakes = true; };
+
+      # git with libsecret for password cache
+      git = prev.git.override { withLibsecret = true; };
     }
     // (import ./julia final prev)
     // (import ./python final prev);
