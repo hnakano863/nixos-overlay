@@ -39,6 +39,9 @@
 
       # nix-direnv flake integration
       nix-direnv = prev.nix-direnv.override { enableFlakes = true; };
+
+      skk-dicts = final.callPackage ./skk-dicts/override.nix { inherit (prev) skk-dicts; };
+
     }
     // (import ./julia final prev)
     // (import ./python final prev);
