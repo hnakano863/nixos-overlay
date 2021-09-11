@@ -18,6 +18,12 @@ in skk-dicts.overrideAttrs (old: {
     ${skktools}/bin/skkdic-expr2 \
       $out/share/SKK-JISYO.L + \
       $out/share/SKK-JISYO.emoji >> $dst
+
+    dst=$out/share/SKK-JISYO.combined+emoji
+    echo ";;; -*- coding: utf-8 -*-" > $dst
+    ${skktools}/bin/skkdic-expr2 \
+      $out/share/SKK-JISYO.combined + \
+      $out/share/SKK-JISYO.emoji >> $dst
   '';
 
 })
