@@ -1,4 +1,4 @@
-{ rustPlatfrom, fetchFromGitHub, pkg-config, openssl }:
+{ lib, rustPlatform, fetchFromGitHub, pkg-config, openssl }:
 rustPlatform.buildRustPackage rec {
   pname = "yaskkserv2";
   version = "unstable";
@@ -18,7 +18,7 @@ rustPlatform.buildRustPackage rec {
 
   cargoSha256 = "JCU3A+l1OogHGs2HpU7NWe0JReZN5WSTmvKKfs+L5AE=";
 
-  PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
+  PKG_CONFIG_PATH = "${openssl.dev}/lib/pkgconfig";
 
   doCheck = false;
 
