@@ -45,6 +45,18 @@
       yaskkserv2 = final.callPackage ./skk-dicts/yaskkserv2.nix {};
       dbskkd-cdb = final.callPackage ./skk-dicts/dbskkd-cdb.nix {};
 
+      picom = prev.picom.overrideAttrs (oldAttrs: {
+        version = "vNext";
+
+        src = final.fetchFromGitHub {
+          owner = "yshui";
+          repo = "picom";
+          rev = "vNext";
+          sha256 = "MbF2iNCPR4NOMzFlrgVPj28AOqvmoHjoTCB1GR4UVys=";
+          fetchSubmodules = true;
+        };
+      });
+
     }
     // (import ./julia final prev)
     // (import ./python final prev);
