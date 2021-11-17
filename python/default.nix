@@ -15,6 +15,8 @@ final: prev:
 
       pmdarima = final.callPackage ./pmdarima { };
 
+      pydeck = final.callPackage ./pydeck { };
+
     };
   };
 }
