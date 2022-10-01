@@ -69,6 +69,13 @@ final: prev: {
     sha256 = "0qb13haa28dwy7s0y1npmwshsijpg1jhdpbgh7sc37cr7sfyc2vz";
   };
 
-  julia-bin = final.julia-1_7_3;
+  julia-1_8_2 = final.callPackage ./template.nix {
+    major = "1";
+    minor = "8";
+    patch = "2";
+    sha256 = "0dg3ahrm7dzlpn9iybvxmmnyavl8pydi641yi1y73v4jmzh0njga";
+  };
+
+  julia-bin = final.julia-1_8_2;
 
 }
