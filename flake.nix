@@ -8,7 +8,6 @@
       # fonts
       cica = final.callPackage ./fonts/cica {};
       iconsfordevs = final.callPackage ./fonts/iconsfordevs {};
-      feather-icon-font = final.callPackage ./fonts/icomoon-feather {};
 
       # polybar
       polybar = prev.polybar.override {
