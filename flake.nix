@@ -6,7 +6,6 @@
 
     overlay = final: prev: {
       # fonts
-      cica = final.callPackage ./fonts/cica {};
       iconsfordevs = final.callPackage ./fonts/iconsfordevs {};
 
       # polybar
